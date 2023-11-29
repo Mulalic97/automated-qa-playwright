@@ -8,7 +8,7 @@ const { envFile, envFileName } = getEnvFile(environment);
 console.log(`Loaded '${envFileName}' for environment '${environment}'`);
 
 const constants = {
-    cubedWebClientURL: envFile.WEBCLIENT_URL,
+    webClientURL: envFile.WEBCLIENT_URL,
 };
 
 const auth = {
