@@ -4,7 +4,8 @@
   "description": "Playwright automation skeleton for e2e testing",
   "main": "index.js",
   "scripts": {
-    "test:ci": "cross-env ENVIRONMENT=CI playwright test"
+    "test:ci": "cross-env ENVIRONMENT=CI playwright test",
+    "style:fix": "prettier --write \"./tests/**/*.ts\" \"./page/**/*.ts\""
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,8 @@
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.0",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "prettier": "^3.1.0"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
