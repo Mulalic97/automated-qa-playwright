@@ -1,9 +1,13 @@
 import { Locator, Page } from '@playwright/test';
 import {Constants} from "../utils/test";
+import {generateRandomString} from "../helpers/helper";
 
 export class RegisterPage{
     private readonly page: Page;
     private readonly constants;
+    private readonly name: string;
+    private readonly email: string;
+    private readonly password: string;
 
     // Element Locators
     readonly nameInputField: Locator;
@@ -15,6 +19,10 @@ export class RegisterPage{
     constructor(page: Page, constants: Constants) {
         this.page = page;
         this.constants = constants;
+        const { name, email, password } = generateRandomString();
+        this.name = name;
+        this.email = email;
+        this.password = password;
 
         this.nameInputField = page.locator('#user_name');
         this.emailInputField = page.locator('#user_email');
@@ -28,18 +36,18 @@ export class RegisterPage{
     }
 
     async inputName(){
-        await this.nameInputField.fill("Name")
+        await this.nameInputField.fill(this.name)
     }
     async inputEmail() {
-        await this.emailInputField.fill("random username");
+        await this.emailInputField.fill(this.email);
     }
 
     async inputPassword() {
-        await this.passwordInputField.fill("generatedpassword");
+        await this.passwordInputField.fill(this.password);
     }
 
     async inputPasswordConfirm(){
-        await this.passwordConfirmationInputField.fill("generatedpassword")
+        await this.passwordConfirmationInputField.fill(this.password)
     }
 
     async clickSignUp(){
