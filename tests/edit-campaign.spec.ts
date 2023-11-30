@@ -25,7 +25,7 @@ test.describe('Logged in user successfully edits campaign', () => {
       'Campaign was successfully created.',
     )
     const campaignElement = page.locator(
-      `(//td[contains(text(),'${name.toString()}')])[1]`,
+      `(//td[contains(text(),'${name}')])[1]`,
     )
     await expect(campaignElement).toBeVisible()
 
