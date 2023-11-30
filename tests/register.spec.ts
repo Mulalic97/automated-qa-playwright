@@ -5,13 +5,15 @@ import {expect} from "@playwright/test";
 import {generateRandomString} from "../helpers/helper";
 import {LoginPage} from "../page/login.page";
 
+
+const { name, email, password } = generateRandomString();
+
 test.describe('Register', () => {
     test('User successfully Registered', async ({ page, constants }) => {
         const registerPage = new RegisterPage(page, constants);
         const editUserPage = new EditUserPage(page,constants);
         const loginPage = new LoginPage(page,constants);
 
-        const { name, email, password } = generateRandomString();
 
 // user inputs field and registers
         await registerPage.register(name,email,password);
