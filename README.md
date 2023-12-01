@@ -6,12 +6,20 @@ Playwright automation skeleton for e2e testing
    git clone https://github.com/Mulalic97/automated-qa-playwright.git
 
 2. Navigate to the project and run the setup command
-   npm i
+   
+   ```npm i```
 
-3. Run tests
+4. Run tests
    # npm run test:{environment}
-   npm run test:ci
-   # run individual tests
-   npx playwright test {**/*.ts}
-   # run headed tests
-   npx playwright test --headed
+   
+   ```npm run test:ci```
+   # Run individual tests
+   
+   ```npx playwright test {**/*.ts}```
+   # Run headed tests
+   
+   ```npx playwright test --headed```
+   # Display report from previous run
+
+   ```npx playwright show-report```
+
