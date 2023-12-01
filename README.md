@@ -9,7 +9,7 @@ Playwright automation skeleton for e2e testing
    npm i
 
 3. Run tests
-   # npm run test:{test}:{environment}
+   # npm run test:{environment}
    npm run test:ci
    # run individual tests
    npx playwright test {**/*.ts}
