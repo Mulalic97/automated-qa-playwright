@@ -20,7 +20,7 @@ jobs:
     - name: Run Playwright tests
       run: | 
        mkdir -p playwright-report
-       npx playwright test --reporter=list
+       npx playwright test --reporter=html
 
     - uses: actions/upload-artifact@v3
       if: always()
