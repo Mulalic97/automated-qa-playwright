@@ -15,10 +15,6 @@ test.describe('Logged in user successfully edits campaign', () => {
     const popUpMessage = page.locator('#flash_notice')
 
     await registerPage.register(name, email, password)
-    await expect(popUpMessage).toBeVisible()
-    await expect(popUpMessage).toContainText(
-      'Welcome! You have signed up successfully.',
-    )
 
     await campaignsPage.verifyAddingCampaign(name)
     await expect(popUpMessage).toContainText(

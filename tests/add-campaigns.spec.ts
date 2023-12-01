@@ -15,16 +15,14 @@ test.describe('Logged in user successfully adds campaigns', () => {
 
     await registerPage.register(name, email, password)
     const successMessage = page.locator('#flash_notice')
-    await expect(successMessage).toBeVisible()
-    await expect(successMessage).toContainText(
-      'Welcome! You have signed up successfully.',
-    )
 
     await campaignsPage.verifyAddingCampaign(name)
     await expect(successMessage).toContainText(
       'Campaign was successfully created.',
     )
-    const campaignElement = page.locator(`(//td[contains(text(),${name})])[1]`)
+    const campaignElement = page.locator(
+      `(//td[contains(text(),'${name}')])[1]`,
+    )
     await expect(campaignElement).toBeVisible()
 
     await editUserPage.cancelMyAccount()

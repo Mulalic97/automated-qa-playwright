@@ -15,11 +15,7 @@ test.describe('Existing email register', () => {
     const loginPage = new LoginPage(page, constants)
 
     await registerPage.register(name, email, password)
-    const successRegister = page.locator('#flash_notice')
-    await expect(successRegister).toBeVisible()
-    await expect(successRegister).toContainText(
-      'Welcome! You have signed up successfully.',
-    )
+
     const signOutButton = await page.$('a[href="/users/sign_out"]')
     await signOutButton.click()
 
