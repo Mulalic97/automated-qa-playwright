@@ -1,5 +1,5 @@
 # automated-qa-playwright
-Playwright automation skeleton for e2e testing
+Playwright automation framework for e2e testing
 
 # Getting Started
 1. Clone the repository
